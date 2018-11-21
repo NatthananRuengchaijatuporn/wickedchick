@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+
+.header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.body {
+  background-color: white;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 5ch
+}
+.body.Img{
+  align-items: center;
+  background-color: #282c34;
+}
+.Button{
+  color: white;
+  background: #000080;
+  font-size: 1ch;
+  text-alignment: center;
+  display: inline-block;
+  padding: 15px 32px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.Button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+

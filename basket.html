@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basket</title>
+	<link rel="stylesheet" type="text/css" href="basket.css">
+	<link rel="stylesheet" href="navbar.css"/>
+</head>
+<body>
+	<div class="navbar">
+	<a href="home.html"><img class ="brand-logo" src="logo.jpg" width="80" height="80"></img></a>
+	<p class = "brand-name">Wicked <br> Chick</p>
+	<div class="search-container">
+		<form>
+		<input type="text" placeholder="Search.." name="search">
+		<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
+	<a href="basket.html"><img class="right" src="cart.png" width="80" height="80"></img></a>
+	<a href="AccountPro.html"><img class="right" src="user.jpg" width="80" height="80"></img></a>
+	
+    </div>
+	
+	<div class="heading">3 Items</div>
+	<br>
+	
+		<div class="row">
+			<img src="https://okusnofood.com/upload-img/home/Okusno-%E0%B8%84%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg" height="100"width = "100">
+			<div class = "column">
+				<button class ="remove"> Remove</button>
+				<div>Product1</div>
+				<div>Qty : 1</div>
+				<div>Price per unit : 200 Baht</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<img src="https://okusnofood.com/upload-img/home/Okusno-%E0%B8%84%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg" height="100" width = "100">
+			<div class = "column">
+				<button class ="remove"> Remove</button>
+				<div>Product1</div>
+				<div>Qty : 2</div>
+				<div>Price per unit : 200 Baht</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<img src="https://okusnofood.com/upload-img/home/Okusno-%E0%B8%84%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg" height="100" width = "100">
+			<div class = "column">
+				<button class ="remove"> Remove</button>
+				<div>Product1</div>
+				<div>Qty : 2</div>
+				<div>Price per unit : 200 Baht</div>
+			</div>
+		</div>
+		<hr id = "end">
+		<div class="ending">
+			
+			<div>Total : 1000 Baht</div>
+			<button class ="proceed">Proceed</button>
+		</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script type="text/javascript" src="basket.js"></script>
+</body>
+</html>

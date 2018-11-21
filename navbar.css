@@ -1,0 +1,75 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body {
+	margin: 0
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: pink;
+  display: block;
+  padding: 0px;
+  line-height: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar .brand-logo {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 10px 20px 10px 100px;
+  text-decoration: none;
+  font-size: 17px;
+  color: white;
+  
+  box-sizing: content-box;
+}
+.navbar .brand-name {
+  float: left;
+  display: block;
+  text-align: left;
+  padding: 0px 60px 0px 0px;
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+  margin: 24px;
+  box-sizing: content-box;
+}
+
+.navbar .search-container {
+  float: left;
+  margin-top: 25px;
+}
+.navbar input[type=text] {
+    padding: 10px 300px 10px 10px;
+  font-size: 17px;
+  border: none;
+  
+  box-sizing: content-box;
+}
+.navbar .search-container button {
+  float: right;
+  font-size: 17px;
+  padding: 10px;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  line-height: normal;
+  box-sizing: content-box;
+  height: 20px;
+}
+.navbar .search-container button:hover {
+  background: #ccc;
+  
+  box-sizing: content-box;
+}
+.navbar .right {
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  color: white;
+  box-sizing: content-box;
+}

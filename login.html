@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+<link href ="login.css" rel = "stylesheet" type="text/css">
+
+<link rel="stylesheet" href="navbar.css"/>
+
+</head>
+<body>
+	<div class="navbar">
+	<a href="home.html"><img class ="brand-logo" src="logo.jpg" width="80" height="80"></img></a>
+	<p class = "brand-name">Wicked <br> Chick</p>
+	<div class="search-container">
+		<form>
+		<input type="text" placeholder="Search.." name="search">
+		<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
+	<a href="basket.html"><img class="right" src="cart.png" width="80" height="80"></img></a>
+	<a href="AccountPro.html"><img class="right" src="user.jpg" width="80" height="80"></img></a>
+	
+    </div>
+	
+    <div class="modal fade" id="login-modal" >
+          <div class="modal-dialog">
+                <div class="loginmodal-container">
+                    <h1>Login to Your Account</h1><br>
+                  <form>
+                    <input type="text" name="user" placeholder="Username">
+                    <input type="password" name="pass" placeholder="Password">
+                    <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                  </form>
+                    
+                  <div class="login-help">
+                    <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+</body>
+</html>

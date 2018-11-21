@@ -1,0 +1,24 @@
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.person {
+    margin-left: 10vw;
+    margin-top : 10vh;
+}
+.buttonW {
+    margin-left: 14vw;
+    margin-top : -3vh;
+    width: 200px;
+}
+.word {
+    margin-right : 5vw ;
+    margin-top : 20vh ;
+}
+
+.topic {
+    font-size : 36px; 
+}
+.detail {
+    font-size : 27px; 
+}
