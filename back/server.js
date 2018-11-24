@@ -14,16 +14,26 @@ app.use(cors());
 });
 conn.connect();*/
 app.get('/product',(req,res)=>{
+	var isDefined = 'NOTdefinelagun';
+	var idkub = req.query.id;
+	console.log(" type of idkub isss = " +typeof idkub);
+    if (typeof idkub === undefined) {
+        console.log("id is undefined");
+    } else {
+        console.log("id is defined kub");
+		isDefined = 'definelagun';
+    }
 	tmp = {
-		productName : 'PRODUCTNAME',
+		productName : 'PRODUCTNAME'+idkub,
 		discountPrice : 50,
 		fullPrice : 100,
 		rating : 5,
-		productDescription : 'Hello JavaScript',
+		productDescription : 'Hello JavaScript '+isDefined,
 		productReview : "I hate JavaScript"
 	}
+	console.log(req.params.id)
 	res.send(tmp);
-})
+});
 
 app.get('/pick',(req,res)=>{
 /*
@@ -35,7 +45,7 @@ app.get('/pick',(req,res)=>{
 	});
 */
 	console.log("I got it.")
-})
+});
 //add into 
 app.post('/basket',(req,res)=>{
 
@@ -46,8 +56,10 @@ app.post('/basket',(req,res)=>{
 	//must get price first (sum of all price)
 
 	//conn.query('INSERT INTO PURCHASEDORDER VALUES (OrderID)')
-})
+});
+app.get('/home', (req,res) => {
 
+});
 app.listen(3000,()=>{
 	console.log('app is running on port 3000')
 });

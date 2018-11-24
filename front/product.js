@@ -1,5 +1,5 @@
 
-axios.get('http://localhost:3000/product').then(res => {
+axios.get('http://localhost:3000/product?id=1').then(res => {
 	document.getElementById('productName').innerHTML = res.data.productName
 	document.getElementById('discountPrice').innerHTML = res.data.discountPrice
 	document.getElementById('fullPrice').innerHTML = res.data.fullPrice
