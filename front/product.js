@@ -1,5 +1,7 @@
-
-axios.get('http://localhost:3000/product?id=1').then(res => {
+let params = (new URL(document.location)).searchParams;
+let idkub = params.get("id");
+console.log('idkub = '+ idkub +" and type = "+ typeof idkub);
+axios.get('http://localhost:3000/product?id='+idkub).then(res => {
 	document.getElementById('productName').innerHTML = res.data.productName
 	document.getElementById('discountPrice').innerHTML = res.data.discountPrice
 	document.getElementById('fullPrice').innerHTML = res.data.fullPrice

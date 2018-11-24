@@ -16,7 +16,7 @@ conn.connect();*/
 app.get('/product',(req,res)=>{
 	var isDefined = 'NOTdefinelagun';
 	var idkub = req.query.id;
-	console.log(" type of idkub isss = " +typeof idkub);
+	console.log(" type of idkub is = " +typeof idkub);
     if (typeof idkub === undefined) {
         console.log("id is undefined");
     } else {
@@ -31,7 +31,6 @@ app.get('/product',(req,res)=>{
 		productDescription : 'Hello JavaScript '+isDefined,
 		productReview : "I hate JavaScript"
 	}
-	console.log(req.params.id)
 	res.send(tmp);
 });
 
