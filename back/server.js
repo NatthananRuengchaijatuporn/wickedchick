@@ -5,14 +5,14 @@ const mysql = require('mysql');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-var conn = mysql.createConnection({
+/* var conn = mysql.createConnection({
 	host:"localhost",
 	user:"root",
 	password:"xxxxx",
 	database:"banking",
 	port:3306
 });
-//conn.connect();
+conn.connect();*/
 app.get('/product',(req,res)=>{
 	tmp = {
 		productName : 'PRODUCTNAME',
@@ -20,20 +20,21 @@ app.get('/product',(req,res)=>{
 		fullPrice : 100,
 		rating : 5,
 		productDescription : 'Hello JavaScript',
-		productReview : "I fucking hate JavaScript"
+		productReview : "I hate JavaScript"
 	}
 	res.send(tmp);
 })
 
 app.get('/pick',(req,res)=>{
-	console.log("I got it.")
+/*
 	conn.query('SELECT * FROM account',function(err,response){
 		if(err)throw err;
-		//response.forEach(function(element){console.log(element.account_number)})
-		//BUsername,ItemID,timestamp,Quantity
+		response.forEach(function(element){console.log(element.account_number)})
+		BUsername,ItemID,timestamp,Quantity
 		res.send(response);
 	});
-	//res.send(tmp);
+*/
+	console.log("I got it.")
 })
 //add into 
 app.post('/basket',(req,res)=>{
