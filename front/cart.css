@@ -1,0 +1,89 @@
+hr{
+	width: 300px;
+}
+button{
+	width:70px !important;
+	background-color: red;
+	color: white;
+}
+#end{
+	height: 5px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
+.heading{
+	position: absolute;
+	left: 430px;
+}
+.ending{
+	position: absolute;
+	right: 420px;
+}
+
+.row{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 100px;
+	padding:10px 0;
+}
+.column{
+	display: flex;
+	flex-direction: column;
+	justify-content: right;
+	padding-left: 20px;
+	
+}
+.proceed{
+	background-color: orange !important;
+	position :relative;
+	left:40px;
+}
+.remove{
+	position: relative;
+	left: 100px;
+	background-color: red !important;
+}
+
+/* Style the container with a rounded border, grey background and some padding and margin */
+.container {
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+/* Clear floats after containers */
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Float images inside the container to the left. Add a right margin, and style the image as a circle */
+.container img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* Increase the font-size of a span element */
+.container span {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+/* Add media queries for responsiveness. This will center both the text and the image inside the container */
+@media (max-width: 500px) {
+  .container {
+    text-align: center;
+  }
+
+  .container img {
+    margin: auto;
+    float: none;
+    display: block;
+  }
+}
