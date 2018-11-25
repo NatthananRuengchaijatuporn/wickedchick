@@ -62,6 +62,14 @@ app.post('/AccPro',(req,res)=>{
 	//	if(err)throw err;
 	//})
 })
+app.post('/productManage',(req,res)=>{
+	//console.log(req.body); // { newUserName : ' ASDAfasd' }
+	console.log(req.body);
+	//conn.query('UPDATE
+	//conn.query('INSERT INTO SEND_TO VALUES (ItemID) VALUES ('+req.ItemID+')',function(err,response){
+	//	if(err)throw err;
+	//})
+})
 
 app.listen(3000,()=>{
 	console.log('app is running on port 3000 kub')
