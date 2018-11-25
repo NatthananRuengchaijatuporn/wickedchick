@@ -2,35 +2,30 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 var conn = mysql.createConnection({
 	host:"localhost",
 	user:"root",
-	password:"xxxxx",
-	database:"banking",
+	password:"insert password mung si",
+	database:"e useless 2 tua yak don kicked pow sardddddddd",
 	port:3306
 });
-//conn.connect();
+/*conn.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});*/
 app.get('/product',(req,res)=>{
-	//var isDefined = 'NOTdefinelagun';
 	var idkub = req.query.id;
 	console.log(" idkub = "+idkub+" AND type of idkub is = " +typeof idkub);
-
-	conn.query('SELECT i.ItemID,i.ItemName,i.ItemDescription,user.DisplayName FROM item as i INNER JOIN user ON i.SUsername=user.Usernamewhere i.ItemID = '+idkub+';', function(error,results,fields){
-	
-	
+	var txt = 'SELECT i.ItemID,i.ItemName,i.ItemDescription,user.DisplayName, FROM item as i INNER JOIN user ON i.SUsername=user.Username where i.ItemID = '+idkub+';';
+	conn.query(txt, function(err,results){
+		if (err) console.error(err);
+		console.log(results);
+		res.json(results)
 	});
-	tmp = {
-		productName : 'PRODUCTNAME'+idkub,
-		discountPrice : 50,
-		fullPrice : 100,
-		rating : 5,
-		productDescription : 'Hello JavaScript '+isDefined,
-		sellerName : "I hate JavaScript"
-	}
-	res.send(tmp);
 });
 
 app.get('/pick',(req,res)=>{
@@ -45,7 +40,7 @@ app.get('/pick',(req,res)=>{
 	console.log("I got it.")
 });
 //add into 
-app.post('/basket',(req,res)=>{
+app.post('/cart',(req,res)=>{
 
 	//console.log(req.B)
 	//conn.query('INSERT INTO SEND_TO VALUES (ItemID) VALUES ('+req.ItemID+')',function(err,response){
@@ -60,7 +55,7 @@ app.get('/home', (req,res) => {
 
 });
 app.post('/AccPro',(req,res)=>{
-	console.log(req.body);
+	//console.log(req.body); // { newUserName : ' ASDAfasd' }
 	console.log(req.body.newUserName);
 	//conn.query('UPDATE
 	//conn.query('INSERT INTO SEND_TO VALUES (ItemID) VALUES ('+req.ItemID+')',function(err,response){
