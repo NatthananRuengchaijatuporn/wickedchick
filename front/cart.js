@@ -1,6 +1,5 @@
 var button = document.querySelector(".proceed");
 
-
 button.addEventListener("click", function(){
 	payment = $('input[name=payment]:checked').val();
 	var items = [{
