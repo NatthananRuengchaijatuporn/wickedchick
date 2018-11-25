@@ -41,7 +41,7 @@ app.get('/pick',(req,res)=>{
 });
 //add into 
 app.post('/cart',(req,res)=>{
-
+	console.log(req.body)
 	//console.log(req.B)
 	//conn.query('INSERT INTO SEND_TO VALUES (ItemID) VALUES ('+req.ItemID+')',function(err,response){
 	//	if(err)throw err;

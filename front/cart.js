@@ -1,18 +1,35 @@
 var button = document.querySelector(".proceed");
+
+
 button.addEventListener("click", function(){
-	console.log("Hello")
-	axios.get('http://localhost:3000/pick').then(res => {
-	console.log(res.data)
-	console.log(res.data.length)
-	for(var i=0;i != res.data.length;i++){
-		console.log(res.data[i])
-		axios.post('http://localhost:3000/basket',res.data[i]).then(
-			function(response){
-				console.log(response)
-			}).catch(function(error){
-				console.log(error)
-			})
-	}
-	});
-	//axios.post('http://localhost:3000/basket',{test:'Yeah'})
+	payment = $('input[name=payment]:checked').val();
+	var items = [{
+	"ItemID" : 1,
+	"ItemName" : "Ipad",
+	"ItemDescription" : "This is Ipad 9.7 inches",
+	"SUsername" : "Mark Hamberg",
+	"Price" : 11500,
+	"Quantity" : 1
+},
+{
+	"ItemID" : 2,
+	"ItemName" : "Iphone XS",
+	"ItemDescription" : "This is Iphone XS 512GB",
+	"SUsername" : "Mark Hamberg",
+	"Price" : 57900,
+	"Quantity" : 1
+},
+{
+	"ItemID" : 3,
+	"ItemName" : "Apple Watch Series4",
+	"ItemDescription" : "This is Apple Watch Series4",
+	"SUsername" : "Mark Hamberg",
+	"Price" : 14400,
+	"Quantity" : 1
+}]
+	//coupon ID uses NULL pai na kub
+	//total price pai buak auo eng na ja
+	console
+	
+	axios.post('http://localhost:3000/cart',{listOfProduct:items,totalPrice:83800,PaymentMethod:payment})
 });
