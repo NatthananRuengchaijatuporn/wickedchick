@@ -5,7 +5,7 @@ var button = document.querySelector("#button-addon2");
 
 button.addEventListener("click", function(){
 	var changeName = document.getElementById('newName').value;
-	var sendkub = { username : changeName }
+	var sendkub = { newUserName : changeName }
 	axios.post('http://localhost:3000/user',sendkub).then(function(response){
 		
 	}).catch(function(error){
