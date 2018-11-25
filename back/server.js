@@ -61,10 +61,11 @@ app.get('/home', (req,res) => {
 
 });
 app.post('/user',(req,res)=>{
-	console.log("hello");
+	console.log(req.body);
+	console.log(req.body.newUserName);
 })
 
 app.listen(3000,()=>{
-	console.log('app is running on port 3000')
+	console.log('app is running on port 3000 kub')
 });
 
