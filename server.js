@@ -47,6 +47,10 @@ app.post('/basket',(req,res)=>{
 	//conn.query('INSERT INTO PURCHASEDORDER VALUES (OrderID)')
 })
 
+app.post('/user',(req,res)=>{
+	console.log("hello");
+})
+
 app.listen(3000,()=>{
 	console.log('app is running on port 3000')
 });
