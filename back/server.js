@@ -58,7 +58,12 @@ app.post('/basket',(req,res)=>{
 });
 app.get('/home', (req,res) => {
 
+
 });
+app.post('/user',(req,res)=>{
+	console.log("hello");
+})
+
 app.listen(3000,()=>{
 	console.log('app is running on port 3000')
 });
