@@ -29,7 +29,6 @@ button.addEventListener("click", function(){
 }]
 	//coupon ID uses NULL pai na kub
 	//total price pai buak auo eng na ja
-	console
-	
+	console.log(items);
 	axios.post('http://localhost:3000/cart',{listOfProduct:items,totalPrice:83800,PaymentMethod:payment})
 });
