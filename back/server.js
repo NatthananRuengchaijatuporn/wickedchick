@@ -20,6 +20,7 @@ app.get('/product',(req,res)=>{
 
 	conn.query('SELECT i.ItemID,i.ItemName,i.ItemDescription,user.DisplayName FROM item as i INNER JOIN user ON i.SUsername=user.Usernamewhere i.ItemID = '+idkub+';', function(error,results,fields){
 	
+	
 	});
 	tmp = {
 		productName : 'PRODUCTNAME'+idkub,
