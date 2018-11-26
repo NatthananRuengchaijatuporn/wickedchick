@@ -13,14 +13,17 @@ var conn = mysql.createConnection({
 	database:"wickedchick",
 	port:3306
 });
-/*conn.connect(function(err) {
+conn.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-});*/
+});
+
+
+var oldName = "Wicked Chick";
 app.get('/product',(req,res)=>{
 	var idkub = req.query.id;
-	console.log(" idkub = "+idkub+" AND type of idkub is = " +typeof idkub);
-	var txt = 'SELECT i.ItemID,i.ItemName,i.ItemDescription,user.DisplayName FROM item as i INNER JOIN user ON i.SUsername=user.Username where i.ItemID = '+idkub+';';ผัั
+	//console.log(" idkub = "+idkub+" AND type of idkub is = " +typeof idkub);
+	var txt = 'SELECT i.ItemID,i.ItemName,i.ItemDescription,user.DisplayName FROM item as i INNER JOIN user ON i.SUsername=user.Username where i.ItemID = '+idkub+';';
 	conn.query(txt, function(err,results){
 		if (err) console.error(err);
 		res.json(results)
@@ -43,12 +46,12 @@ app.post('/cart',(req,res)=>{
 	console.log('total Price kub '+totalPrice);
 	var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
 	var txtkub = "INSERT INTO purchase_order (OrderID, TotalPrice, Orderdate, CouponID) VALUES (322, "+totalPrice+", '"+datetime+"', NULL);";
-	/*conn.query(txtkub, function(err,response){
+	conn.query(txtkub, function(err,response){
 		if(err)throw err;
 	})
 	conn.query('INSERT INTO SENT_TO (ItemID,OrderID) Values '+insertValuesTxt+';', function(err,response){
 		if(err)throw err;
-	})*/
+	})
 	
 });
 app.get('/home', (req,res) => {
@@ -57,17 +60,17 @@ app.get('/home', (req,res) => {
 });
 app.post('/AccPro',(req,res)=>{
 	//console.log(req.body); // { newUserName : ' ASDAfasd' }
-	console.log(req.body.newUserName);
-	//conn.query('UPDATE
-	//conn.query('INSERT INTO SEND_TO VALUES (ItemID) VALUES ('+req.ItemID+')',function(err,response){
-	//	if(err)throw err;
-	//})
+	var newUserNamekub = req.body.newUserName;
+	console.log(newUserNamekub);
+	conn.query("UPDATE user SET Username = '"+newUserNamekub+"' WHERE (Username = '"+oldName+"');",function(err,response){
+		if(err)throw err;
+	});
+	oldName = newUserNamekub;
 })
 app.post('/productManage',(req,res)=>{
 	//console.log(req.body); // { newUserName : ' ASDAfasd' }
 	console.log(req.body);
-	//conn.query('UPDATE
-	//conn.query('INSERT INTO SEND_TO VALUES (ItemID) VALUES ('+req.ItemID+')',function(err,response){
+	//conn.query("",function(err,response){
 	//	if(err)throw err;
 	//})
 })
