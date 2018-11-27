@@ -5,6 +5,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: lightblue;
 }
 .category-container { /* block with category list and promotion1*/
     background-color: lightblue;	/* for testing kub*/
@@ -61,10 +62,13 @@ body {
 	flex-wrap: wrap;
 }
 .product-item {
-	background-color: gray; /* for testing kub*/
+	background-color: #f8f9fa; /* for testing kub*/
 	padding: 10px;	/* inner space from border see color red*/
 	margin: 20px;	/* outer space from border see color lighskyblue dai*/
 	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	text-align: center;
 }
 .product-item a { color: inherit; } 
 .product-item a:hover { color: blue; } 
@@ -99,64 +103,30 @@ body {
 
 <div class="item-container" >
 
-  <span style="font-size:40px; color:black">FeelsBadMan</span>
+  <span style="font-size:40px; color:black">Items</span>
   <div class="product-container">
   
   	<div class="product-item">
 	<a href="product.html?id=1">
-	<img src="logo.jpg" width="150" height="150">
-	<p>FeelsBadMan1</p>
+	<img src="product1.png" width="150" height="150">
+	<p>iPhone XS</p>
 	</a>
 	</div>
 	  
   	<div class="product-item">
 	<a href="product.html?id=2">
-	<img src="logo.jpg" width="150" height="150">
-	<p>FeelsBadMan2</p>
+	<img src="product2.png" width="150" height="150">
+	<p>Apple Watch Series 4</p>
 	</a>
 	</div>
 	  
   	<div class="product-item">
 	<a href="product.html?id=3">
-	<img src="logo.jpg" width="150" height="150">
-	<p>FeelsBadMan3</p>
+	<img src="product3.png" width="150" height="150">
+	<p>iPad Pro 10.5</p>
 	</a>
 	</div>
-	  
-  	<div class="product-item">
-	<a href="product.html?id=4">
-	<img src="logo.jpg" width="150" height="150">
-	<p>FeelsBadMan4</p>
-	</a>
-	</div>
-	  
-  	<div class="product-item">
-	<a href="product.html">
-	<img src="logo.jpg" width="150" height="150">
-	<p>FeelsBadMan5</p>
-	</a>
-	</div>
-	  
-  	<div class="product-item">
-	<a href="product.html">
-	<img src="logo.jpg" width="150" height="150">
-	<p>FeelsBadMan6</p>
-	</a>
-	</div>
-	  
-  	<div class="product-item">
-	<a href="product.html">
-	<img src="logo.jpg" width="150" height="150">
-	<p>FeelsBadMan7</p>
-	</a>
-	</div>
-	  
-  	<div class="product-item">
-	<a href="product.html">
-	<img src="logo.jpg" width="150" height="150">
-	<p>FeelsBadMan8</p>
-	</a>
-	</div>
+
 	  
 	
   </div>
