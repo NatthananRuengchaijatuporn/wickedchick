@@ -6,6 +6,7 @@ const mysql = require('mysql');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+
 var conn = mysql.createConnection({
 	host:"localhost",
 	user:"root",
@@ -17,6 +18,7 @@ conn.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
 });
+
 
 var oldName = "Wicked Chick";
 app.get('/product',(req,res)=>{
@@ -30,7 +32,9 @@ app.get('/product',(req,res)=>{
 	});
 });
 
+
 //----------------------------------------------------------------------
+
 app.post('/cart',(req,res)=>{
 	var items = req.body.listOfProduct;
 	console.log(items)
