@@ -3,7 +3,7 @@ function deletekub(x){
 	console.log('Hiii '+x);
 	var deleted = document.getElementById(x);
 	document.getElementById("items").removeChild(deleted);
-	//axios.post('http://localhost:3000/productManage',{ItemID: x});
+	axios.post('http://localhost:3000/productManage',{ItemID: x});
 }
 
 
@@ -22,21 +22,29 @@ function addItems(IDkub,ItemName,Price){
 			</div>\
 		</div>\
 	</div>'
-	console.log(stringkub)
+	//console.log(stringkub)
 	var temp = document.createElement('div');
 		temp.innerHTML = stringkub;
 		var htmlObjectkub = temp.firstChild;
 		document.getElementById("items").appendChild(htmlObjectkub);
 }
+
+/*
 addItems(1,'iPhoneXS',7500);
 addItems(2,'So Good',500000);
 addItems(3,'Yung me KFX Tenyo sorn yu kang nai jai nun',500000);
+*/
+var r;
 
-/*
 axios.get('http://localhost:3000/productManage')
   .then(function (response) {
     // handle success
+	r = response
     console.log(response);
+	var datakub = response.data;
+	for(i=0; i< datakub.length;++i){
+		addItems(datakub[i].ItemID,datakub[i].ItemName,datakub[i].Price);
+	}
   })
   .catch(function (err) {
     // handle error
@@ -45,5 +53,5 @@ axios.get('http://localhost:3000/productManage')
   .then(function () {
     // always executed
   });
-*/
+
 

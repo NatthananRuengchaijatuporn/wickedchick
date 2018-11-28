@@ -34,7 +34,7 @@
       <div class="col-lg-12">
         <div class="row">
           <div class="col-sm border1">
-            <img src="logo.jpg" class="center-block" style="border: 1px solid #555;" height="200" width="200" >
+            <img id ="picture" src="logo.jpg" class="center-block" style="border: 1px solid #555;" height="200" width="200" >
           </div>
           
           <div class="col border1">
@@ -45,17 +45,23 @@
             <div class="row">
               <div class="col-3">
                 <div class="row">
-                <span> DiscountedPrice: </span>
-                <span class="" id="discountPrice"></span>
+                <span> Price: </span>
+                <span class="" id="discountedPrice"></span>
                 </div>
                 <div class="row">
                 <span> FullPrice: </span>
-                <span class="" id="fullPrice"></span>
+                <span class="" id="fullPrice" style="text-decoration: line-through;"></span>
                 </div>
               </div>
               <div class="col-9">
+				<div class="row">
                 <span> Rating: </span>
                 <span class="" id="rating"></span>
+				</div>
+				<div class="row">
+                <span> Discount: </span>
+                <span class="" id="discount"></span>
+				</div>				
               </div>
             </div>
             
@@ -76,11 +82,11 @@
         <div class="row">
           <div class="col-8">
           Product Description :<br>
-          <span id='productDescription'></span>
+          <span id="productDescription"></span>
           </div>
           <div class="col-4">
           Seller :<br>
-          <span id='sellername'></span>
+          <span id="sellerName"></span>
           </div>
         </div>
       </div>

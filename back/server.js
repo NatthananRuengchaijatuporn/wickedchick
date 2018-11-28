@@ -9,7 +9,7 @@ app.use(cors());
 var conn = mysql.createConnection({
 	host:"localhost",
 	user:"root",
-	password:"eieieieiei",
+	password:"tunlnw",
 	database:"wickedchick",
 	port:3306
 });
@@ -22,17 +22,19 @@ var oldName = "Wicked Chick";
 app.get('/product',(req,res)=>{
 	var idkub = req.query.id;
 	//console.log(" idkub = "+idkub+" AND type of idkub is = " +typeof idkub);
-	var txt = 'SELECT i.ItemID,i.ItemName,i.ItemDescription,user.DisplayName FROM item as i INNER JOIN user ON i.SUsername=user.Username where i.ItemID = '+idkub+';';
+	var txt = 'SELECT i.ItemID,i.ItemName,i.ItemDescription,user.DisplayName,item_name.ItemRating,item_name.Price,item_name.Discount FROM item as i INNER JOIN user ON i.SUsername=user.Username INNER JOIN item_name ON i.itemName = item_name.ItemName where i.ItemID = '+idkub+';';
 	conn.query(txt, function(err,results){
 		if (err) console.error(err);
-		res.json(results)
+		console.log(results);
+		res.json(results);
 	});
 });
 
+//----------------------------------------------------------------------
 app.post('/cart',(req,res)=>{
 	var items = req.body.listOfProduct;
 	console.log(items)
-	var OrderID = 2; // MAYBE Query MAX(OrderID) and +1
+	var OrderID = 322; // MAYBE Query MAX(OrderID) and +1
 	var totalPrice = 0;
 	var insertValuesTxt = '';
 	for (i = 0; i< items.length; i++ ){
@@ -54,6 +56,8 @@ app.post('/cart',(req,res)=>{
 	})
 	
 });
+
+//--------THIS ONE IS OPTIONAL , didn't used :( --------------------------------------------------------------
 app.get('/home', (req,res) => {
 	conn.query("select * from item natural join item_name;", function(err,results){
 		if(err)throw err;
@@ -61,6 +65,8 @@ app.get('/home', (req,res) => {
 		res.json(results);
 	})
 });
+
+//----------------------------------------------------------------------
 app.post('/AccPro',(req,res)=>{
 	//console.log(req.body); // { newUserName : ' ASDAfasd' }
 	var newUserNamekub = req.body.newUserName;
@@ -71,19 +77,24 @@ app.post('/AccPro',(req,res)=>{
 	oldName = newUserNamekub;
 })
 
-
+//----------------------------------------------------------------------
 app.get('/productManage', (req,res) => {
-	//conn.query('SELECT itemid,itemname FROM ITEM')
-
+	conn.query('SELECT ItemID,ItemName,Price FROM ITEM NATURAL JOIN item_Name',function(err,results){
+		if(err) throw err;
+		console.log(results);
+		res.json(results);
+	});
+	
 });
 app.post('/productManage',(req,res)=>{
-	//console.log(req.body); // { newUserName : ' ASDAfasd' }
 	console.log(req.body);
-	//conn.query("",function(err,response){
-	//	if(err)throw err;
-	//})
+	var deletedID = req.body.ItemID;
+	conn.query("DELETE item, item_name FROM item INNER JOIN item_name ON item.ItemName = item_name.ItemName WHERE item.ItemID = "+deletedID+";",function(err,results){
+		if(err)throw err;
+	});
 })
 
+//----------------------------------------------------------------------
 app.listen(3000,()=>{
 	console.log('app is running on port 3000 kub')
 });
