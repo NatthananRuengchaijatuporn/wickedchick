@@ -1,6 +1,6 @@
-var button = document.querySelector(".proceed");
-
-button.addEventListener("click", function(){
+/*button = document.getElementById("proceed");
+button.addEventListener('click',gogo());*/
+function gogo(){
 	payment = $('input[name=payment]:checked').val();
 	var items = [{
 	"ItemID" : 1,
@@ -28,6 +28,9 @@ button.addEventListener("click", function(){
 }]
 	//coupon ID uses NULL pai na kub
 	//total price pai buak auo eng na ja
-	console.log(items);
-	axios.post('http://localhost:3000/cart',{listOfProduct:items,totalPrice:83800,PaymentMethod:payment})
-});
+	axios.post('http://localhost:3000/cart',{listOfProduct:items,totalPrice:83800,PaymentMethod:payment});
+	setTimeout(function() {
+		//your code to be executed after x milliseconds
+		window.location = "Order.html";
+	}, 30);
+}

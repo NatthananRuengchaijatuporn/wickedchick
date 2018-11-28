@@ -10,7 +10,7 @@ var conn = mysql.createConnection({
 	host:"localhost",
 	user:"root",
 	password:"tunlnw",
-	database:"wickedchick",
+	database:"finalwickedchick",
 	port:3306
 });
 conn.connect(function(err) {
@@ -25,7 +25,6 @@ app.get('/product',(req,res)=>{
 	var txt = 'SELECT i.ItemID,i.ItemName,i.ItemDescription,user.DisplayName,item_name.ItemRating,item_name.Price,item_name.Discount FROM item as i INNER JOIN user ON i.SUsername=user.Username INNER JOIN item_name ON i.itemName = item_name.ItemName where i.ItemID = '+idkub+';';
 	conn.query(txt, function(err,results){
 		if (err) console.error(err);
-		console.log(results);
 		res.json(results);
 	});
 });
@@ -33,13 +32,13 @@ app.get('/product',(req,res)=>{
 //----------------------------------------------------------------------
 app.post('/cart',(req,res)=>{
 	var items = req.body.listOfProduct;
-	console.log(items)
-	var OrderID = 322; // MAYBE Query MAX(OrderID) and +1
+	//console.log(items)
+	var OrderID = 322;
 	var totalPrice = 0;
 	var insertValuesTxt = '';
 	for (i = 0; i< items.length; i++ ){
 		totalPrice += items[i].Price;
-		insertValuesTxt += '('+items[i].ItemID+', '+OrderID+')'; // 4 is OrderID
+		insertValuesTxt += '('+items[i].ItemID+', '+OrderID+')';
 		if ( i < items.length -1 ) {
 		insertValuesTxt += ',';
 		}
@@ -49,10 +48,10 @@ app.post('/cart',(req,res)=>{
 	var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
 	var txtkub = "INSERT INTO purchase_order (OrderID, TotalPrice, Orderdate, CouponID) VALUES ("+OrderID+", "+totalPrice+", '"+datetime+"', NULL);";
 	conn.query(txtkub, function(err,results){
-		if(err)throw err;
+		if(err)console.log(err);//throw err;
 	})
 	conn.query('INSERT INTO SENT_TO (ItemID,OrderID) Values '+insertValuesTxt+';', function(err,response){
-		if(err)throw err;
+		if(err)console.log(err);//throw err;
 	})
 	
 });
